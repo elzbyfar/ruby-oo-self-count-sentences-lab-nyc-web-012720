@@ -15,10 +15,11 @@ class String
   end
 
   def count_sentences
-    array = self.split(". ")
-    array = array.map {|sent| sent.split("? ")}.flatten
-    array = array.map {|sent| sent.split("! ")}.flatten
-    array.count 
+    self.split(". ").map do |sentence| 
+      sentence.split("? ")
+    end.flatten.map do |sentence| 
+      sentence.split("! ")
+    end .flatten.count
   end 
     
 end
